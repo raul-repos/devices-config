@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "diamond",
+          "foreground": "#F1FA8C",
+          "template": "<#8B4500>\uD83D\uDE4A </> <b>{{ .Path }}</b> ",
+          "properties": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "foreground": "#43CCEA",
+          "template": "<#fff31C>\uD83C\uDF4C</><b> {{ .HEAD }}</b>",
+          "properties": {
+            "branch_icon": ""
+          }
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "foreground": "#8B4500",
+          "template": "<#ff0000> \uD83D\uDE49 </>"
+        }
+      ]
+    },
+    {
+      "background": "#29315A",
+      "foreground": "#E4F34A",
+      "leading_diamond": " \ue0b6",
+      "properties": {
+        "fetch_version": false
+      },
+      "style": "diamond",
+      "template": "\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+      "trailing_diamond": "\ue0b4",
+      "type": "python"
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "template": ">"
+        }
+      ],
+      "newline": true
+    }
+  ]
+}
