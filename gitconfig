@@ -1,0 +1,9 @@
+[user]
+	email = example@test.com
+	name = RCalvo
+[alias]
+	aliases = !git config -l | grep alias | sed s/^alias.//g
+	save = "! git add  . ; git reset -- web_rrhh/config/settings.py ; git commit -m"
+	l = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative
+	commit-ahead = ! git log origin/main..HEAD --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=relative
+	recent-branches = for-each-ref --sort=-committerdate --count=10 --format='%(refname:short)' refs/heads/
